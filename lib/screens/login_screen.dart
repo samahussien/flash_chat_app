@@ -1,5 +1,6 @@
 import 'package:flash_chat/components/RoundedButton.dart';
 import 'package:flash_chat/screens/chat_screen.dart';
+import 'package:flash_chat/sharedFunctions.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../constants.dart';
@@ -91,6 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                        email: emailController.text, password: passwordController.text);
 
                    Navigator.pushNamed(context, ChatScreen.id);
+                clearController(emailController: emailController, passwordController: passwordController);
 
 errorMessage='';
                }on FirebaseAuthException

@@ -1,5 +1,6 @@
 import 'package:flash_chat/components/RoundedButton.dart';
 import 'package:flash_chat/screens/chat_screen.dart';
+import 'package:flash_chat/sharedFunctions.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -84,7 +85,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                        await _auth.createUserWithEmailAndPassword(
                           email: emailController.text, password: passwordController.text);
                       Navigator.pushNamed(context, ChatScreen.id);
-
+clearController(emailController: emailController, passwordController: passwordController);
                       errorMessage='';
 
                     } on FirebaseAuthException

@@ -57,6 +57,7 @@ void getCurrentUser(){
               icon: const Icon(Icons.close),
               onPressed: () {
                 _auth.signOut();
+                Navigator.pop(context);
                 //Implement logout functionality
               }),
         ],
@@ -99,7 +100,6 @@ void getCurrentUser(){
                 ],
               ),
             ),
-            // ElevatedButton(onPressed: (){messagesStream();}, child: Text('get'))
           ],
         ),
       ),
